@@ -1,4 +1,4 @@
-import MathForPredicttion.LinearRegressionPrediction;
+import mathForPredicttion.LinearRegressionPrediction;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

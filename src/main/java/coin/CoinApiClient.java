@@ -1,6 +1,6 @@
-package Coin;
+package coin;
 
-import Coin.Domain.MarketChart;
+import coin.domain.MarketChart;
 
 public class CoinApiClient {
     private CoinApiService coinApiService;

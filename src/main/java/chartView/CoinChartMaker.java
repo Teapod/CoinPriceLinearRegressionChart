@@ -1,4 +1,4 @@
-package ChartView;
+package chartView;
 
 import org.knowm.xchart.QuickChart;
 import org.knowm.xchart.SwingWrapper;
@@ -8,19 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CoinChartMaker {
-   private XYChart chart;
+    private final SwingWrapper swingWrapper;
 
-    public CoinChartMaker(int daysToPredict, List<Double> prices){
+    public CoinChartMaker(int daysToPredict, List<Double> prices) {
         List<Double> daysPastFuture = new ArrayList<>();
-        for (double i = daysToPredict*-1.0; i <=daysToPredict ; i++) {
+        for (double i = daysToPredict * -1.0; i <= daysToPredict; i++) {
             daysPastFuture.add(i);
         }
-        this.chart = QuickChart.getChart(
+        swingWrapper = new SwingWrapper(QuickChart.getChart(
                 "BitcoinRegression", "DaysFromToday", "Price", "LinearRegrresion",
-                daysPastFuture, prices );
+                daysPastFuture, prices));
     }
 
-    public void displayChart(){
-        new SwingWrapper(chart).displayChart();
+    public void displayChart() {
+        swingWrapper.displayChart();
     }
 }

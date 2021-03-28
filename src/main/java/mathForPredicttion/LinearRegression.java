@@ -1,4 +1,4 @@
-package MathForPredicttion;
+package mathForPredicttion;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ public class LinearRegression {
     private final double slope;
     private final double intercept;
 
-    public LinearRegression (List<Double> x, List<Double> y) {
+    public LinearRegression(List<Double> x, List<Double> y) {
         if (x.size() != y.size()) {
             throw new IllegalArgumentException("arrays lengths are not equal");
         }
@@ -21,17 +21,16 @@ public class LinearRegression {
         for (int i = 0; i < numberOfDataValues; i++) {
             sumX += x.get(i);
             sumY += y.get(i);
-            sumOfXSquared += x.get(i)*x.get(i);
-            sumOfXMultipliedByY += x.get(i)*y.get(i);
+            sumOfXSquared += x.get(i) * x.get(i);
+            sumOfXMultipliedByY += x.get(i) * y.get(i);
         }
 
         double slopeNominator = numberOfDataValues * sumOfXMultipliedByY - sumX * sumY;
         double slopeDenominator = numberOfDataValues * sumOfXSquared - Math.pow(sumX, 2);
-        this.slope =  slopeNominator / slopeDenominator;
+        this.slope = slopeNominator / slopeDenominator;
 
         double interceptNominator = sumY - sumX * slope;
-        double interceptDenominator = numberOfDataValues;
-        this.intercept = interceptNominator / interceptDenominator;
+        this.intercept = interceptNominator / (double) numberOfDataValues;
 
 
     }
