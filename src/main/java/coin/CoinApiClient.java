@@ -3,16 +3,12 @@ package coin;
 import coin.domain.MarketChart;
 
 public class CoinApiClient {
-    private CoinApiService coinApiService;
-    private CoinApi coinApi;
+    private final CoinApiService coinApiService;
+    private final CoinApi coinApi;
 
     public CoinApiClient() {
         this.coinApi = new CoinApi();
-        this.coinApiService = coinApi.createService(CoinApiService.class);
-    }
-
-    public MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days) {
-        return coinApi.executeSync(coinApiService.getCoinMarketChartById(id, vsCurrency, days));
+        this.coinApiService = coinApi.createService();
     }
 
     public MarketChart getCoinMarketChartById(String id, String vsCurrency, Integer days, String interval) {

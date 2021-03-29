@@ -20,8 +20,8 @@ public class CoinApi {
         retrofit = builder.build();
     }
 
-    <S> S createService(Class<S> serviceClass) {
-        return retrofit.create(serviceClass);
+    CoinApiService createService() {
+        return retrofit.create(CoinApiService.class);
     }
 
     <T> T executeSync(Call<T> call) {

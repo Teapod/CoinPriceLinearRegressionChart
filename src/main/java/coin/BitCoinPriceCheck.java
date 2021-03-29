@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BitCoinPriceCheck {
-    private List<Double> dateStamps = new ArrayList<>();
-    private List<Double> bitPrices = new ArrayList<>();
+    private final List<Double> dateStamps = new ArrayList<>();
+    private final List<Double> bitPrices = new ArrayList<>();
 
     public BitCoinPriceCheck(int daysToCheck) {
         MarketChart mc = new CoinApiClient().getCoinMarketChartById("bitcoin", "usd", daysToCheck, "daily");

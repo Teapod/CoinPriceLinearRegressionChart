@@ -13,10 +13,4 @@ public interface CoinApiService {
             @Query("vs_currency") String vsCurrency,
             @Query("days") Integer days,
             @Query("interval") String interval);
-
-    @GET("coins/{id}/market_chart")
-    Call<MarketChart> getCoinMarketChartById(
-            @Path("id") String id,
-            @Query("vs_currency") String vsCurrency,
-            @Query("days") Integer days);
 }
